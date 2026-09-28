@@ -25,9 +25,10 @@ const JobPage = ({ isHome = false }) => {
   }, [isHome]);
 
   return (
+    <> 
     <section className="bg-slate-100 py-12">
       {/* Dynamic Heading Section */}
-      <div className="bg-gray-600 shadow-sm mb-10">
+      <div className="bg-orange-600 shadow-sm mb-10">
         <h2 className="font-bold text-3xl md:text-4xl text-center text-white py-8 px-4 max-w-7xl mx-auto">
           {isHome ? "Recent Jobs" : "Browse Jobs"}
         </h2>
@@ -83,6 +84,8 @@ const JobPage = ({ isHome = false }) => {
         )}
       </div>
     </section>
+
+    </>
   )
 }
 
