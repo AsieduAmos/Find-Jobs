@@ -9,7 +9,7 @@ const HomePage = () => {
     
     <main className="w-full min-h-screen bg-white pt-16"> 
           {/* Hero Section */}
-       <section className="bg-stone-200 text-black py-8 md:py-14 px-6 sm:px-12  text-center mt-4 mx-auto border-b border-zinc-400">
+       <section className="bg-stone-200 text-black py-8 md:py-14 px-6 sm:px-12  text-center mx-auto border-b border-zinc-400">
         <p className="text-lg md:text-2xl lg:text-sm font-normal max-w-4xl mx-auto leading-relaxed">
           Your Gateway to Career Growth and Top Talent.
           Whether you are looking for your next exciting job opportunity 
