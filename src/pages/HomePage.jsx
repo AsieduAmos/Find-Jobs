@@ -59,7 +59,7 @@ const HomePage = () => {
       </div>  
 
         {/* Embedded Jobs Feed */}
-        <section className="pt-8">
+        <section className="">
           <JobPage isHome={true} />
         </section>
 

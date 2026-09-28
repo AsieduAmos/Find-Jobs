@@ -28,9 +28,9 @@ const JobPage = ({ isHome = false }) => {
     <> 
     <section className="bg-slate-100 py-12">
       {/* Dynamic Heading Section */}
-      <div className="bg-orange-600 shadow-sm mb-10">
-        <h2 className="font-bold text-3xl md:text-4xl text-center text-white py-8 px-4 max-w-7xl mx-auto">
-          {isHome ? "Recent Jobs" : "Browse Jobs"}
+      <div className="bg-stone-100 shadow-sm mb-10">
+        <h2 className="font-bold text-3xl md:text-4xl text-center text-orange-600 py-8 px-4 max-w-7xl mx-auto">
+          {isHome ? "Recent Jobs Post" : "Browse Jobs"}
         </h2>
       </div>
       
@@ -49,13 +49,13 @@ const JobPage = ({ isHome = false }) => {
                 {/* Main Card Content */}
                 <div>
                   <div className="flex justify-between items-start gap-2 mb-3">
-                    <h3 className="text-xl text-gray-800 font-bold leading-snug">{job.title}</h3>
+                    <h3 className="text-xl text-black font-bold leading-snug">{job.title}</h3>
                     <span className="inline-block bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-full font-medium whitespace-nowrap">
                       {job.type}
                     </span>
                   </div>
                   
-                  <p className="mb-4 text-gray-600 text-sm md:text-base leading-relaxed">
+                  <p className="mb-4 text-black text-sm md:text-base leading-relaxed">
                     {job.description?.slice(0, 90) || "No description available"}...
                   </p>
                 </div>
@@ -72,7 +72,7 @@ const JobPage = ({ isHome = false }) => {
                   
                   <Link 
                     to={`/jobpage/${job.id}`} 
-                    className="block w-full text-center text-white py-2.5 px-4 rounded-lg bg-gray-700 hover:bg-gray-800 transition text-sm font-bold shadow-sm"
+                    className="block w-full text-center text-black py-2 px-4 rounded-lg bg-orange-400 hover:bg-orange-600 transition text-sm font-bold shadow-sm"
                   >
                     Read More
                   </Link>
