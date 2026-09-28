@@ -7,7 +7,7 @@ import JobPage from './JobPage'
 const HomePage = () => {
   return (
     
-    <main className="w-full min-h-screen bg-white pt-16"> 
+    <main className="w-full min-h-screen bg-stone-100 pt-16"> 
           {/* Hero Section */}
        <section className="bg-stone-100 text-black py-6 md:py-12 px-6 sm:px-12 text-center mx-auto 
            border-b border-zinc-400 shadow-2xl">
@@ -59,7 +59,7 @@ const HomePage = () => {
       </div>  
 
         {/* Embedded Jobs Feed */}
-        <section className="">
+        <section className="mt-12">
           <JobPage isHome={true} />
         </section>
 
