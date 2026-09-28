@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 const NaviBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Clean, consistent styling across mobile and desktop
+  // consistent styling across mobile and desktop
   const activeStyle = ({ isActive }) => 
     isActive 
       ? 'bg-black text-white font-semibold text-lg lg:text-base px-6 py-3 lg:px-4 lg:py-2 text-center rounded-md cursor-pointer transition duration-300 ease-in-out'
