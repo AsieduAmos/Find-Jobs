@@ -8,11 +8,11 @@ const NaviBar = () => {
   // consistent styling across mobile and desktop
   const activeStyle = ({ isActive }) => 
     isActive 
-      ? 'bg-black text-white font-semibold text-lg lg:text-base px-6 py-3 lg:px-4 lg:py-2 text-center rounded-md cursor-pointer transition duration-300 ease-in-out'
-      : 'text-black border border-gray-700 font-semibold text-lg lg:text-base px-6 py-3 lg:px-4 lg:py-2 text-center rounded-md cursor-pointer hover:bg-gray-900 hover:text-white transition duration-300 ease-in-out';
+      ? 'bg-orange-600 hover:bg-orange-900 text-white font-semibold text-lg lg:text-base px-6 py-3 lg:px-4 lg:py-2 text-center rounded-md cursor-pointer transition duration-300 ease-in-out'
+      : 'text-white bg-black border border-white font-semibold text-lg lg:text-base px-6 py-3 lg:px-4 lg:py-2 text-center rounded-md cursor-pointer hover:bg-orange-400 hover:text-white transition duration-300 ease-in-out';
   
   return (
-    <nav className="fixed top-0 left-0 w-full border-b border-gray-200 shadow-xl bg-stone-300 z-50">
+    <nav className="fixed top-0 left-0 w-full border-b border-white shadow-xl bg-stone-300 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           
