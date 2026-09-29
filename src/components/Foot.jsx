@@ -6,7 +6,7 @@ const Foot = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-800 text-white py-8 md:py-10 border-t border-gray-700 w-full mt-auto">
+    <footer className="bg-orange-400 text-black py-8 md:py-10 border-t border-orange-600 w-full mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Logo Section */}
@@ -20,7 +20,7 @@ const Foot = () => {
         
         {/* Copyright Notice */}
         <div className="border-t border-gray-700/50 pt-6">
-          <p className="text-center text-sm md:text-base text-gray-400 font-medium tracking-wide">
+          <p className="text-center text-sm md:text-base text-white font-medium tracking-wide">
             &copy; {currentYear} FindJobs. All rights reserved.
           </p>
         </div>
