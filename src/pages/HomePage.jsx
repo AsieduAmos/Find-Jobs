@@ -57,9 +57,12 @@ const HomePage = () => {
           </div>
         </div>
       </div>  
-
+       <div className="bg-orange-400 text-black py-6 md:py-6 px-6 sm:px-12 text-center mx-auto shadow-2xl 
+        text-white font-bold mt-8">
+          <p>Find A Job That Suits Your Interest And Skills</p>
+      </div>
         {/* Embedded Jobs Feed */}
-        <section className="mt-12">
+        <section className="mt-0">
           <JobPage isHome={true} />
         </section>
 

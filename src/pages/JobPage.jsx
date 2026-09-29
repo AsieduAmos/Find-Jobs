@@ -32,6 +32,7 @@ const JobPage = ({ isHome = false }) => {
         <h2 className="font-bold text-3xl md:text-4xl text-center text-orange-600 py-8 px-4 max-w-7xl mx-auto">
           {isHome ? "Recent Jobs Post" : "Browse Jobs"}
         </h2>
+       
       </div>
       
       {/* Outer Layout Wrapper */}
