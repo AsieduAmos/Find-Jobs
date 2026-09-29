@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom' 
-import findjob from '../images/findjob.png'
-import employer from '../images/employer.jpg'
+
+
 import JobPage from './JobPage'
 
 const HomePage = () => {
@@ -17,7 +17,7 @@ const HomePage = () => {
          </p>
       </section>
 
-     <div className="w-full aspect-[4/3] sm:aspect-video md:h-96 lg:h-[28rem]  bg-[url('/src/images/emp.webp')]
+     <div className="w-full aspect-[4/3] sm:aspect-video md:h-96 lg:h-[28rem]  bg-[url('/src/images/employer.png')]
             bg-cover bg-center bg-no-repeat relative flex flex-col justify-end md:block image-render-auto">
        
           {/* Call to Action: Add Job */}
@@ -41,7 +41,7 @@ const HomePage = () => {
           <p>Unlock Your Professional Potential</p>
       </div>
             {/* Section 2: Find Job Info Grid */}
-      <div className="w-full aspect-[4/3] sm:aspect-video md:h-96 lg:h-[28rem] bg-[url('/src/images/worriedlady.avif')]
+      <div className="w-full aspect-[4/3] sm:aspect-video md:h-96 lg:h-[28rem] bg-[url('/src/images/worriedlady.png')]
             bg-cover bg-center bg-no-repeat relative flex flex-col justify-end md:block image-render-auto">
           <div className="relative md:absolute md:bottom-16 md:left-1/2 md:-translate-x-1/5 bg-white text-black 
             p-4 sm:p-6 md:p-6 w-11/12 max-w-3xl mx-auto shadow-xl rounded-xl text-center my-4 md:my-0  ">

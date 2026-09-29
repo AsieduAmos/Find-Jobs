@@ -26,4 +26,4 @@ To run the application locally, you need to run both commands in different termi
 
 
 # Screenshot of various pages of the application
-![alt text](<Screenshot 2026-09-18 233143.png>) ![alt text](<Screenshot 2026-09-18 233246.png>) ![alt text](<Screenshot 2026-09-18 233335.png>) ![alt text](<Screenshot 2026-09-18 233555.png>) ![alt text](<Screenshot 2026-09-18 233628.png>) ![alt text](<Screenshot 2026-09-18 233716.png>)
+![alt text](HomePage.png)![alt text](HomePage2.png)![alt text](<AddJob Page.png>)![alt text](JobsPage.png)![alt text](JobDetailPage.png)
