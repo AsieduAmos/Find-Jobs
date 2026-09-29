@@ -9,7 +9,7 @@ const HomePage = () => {
     
     <main className="w-full min-h-screen bg-stone-100 pt-16"> 
           {/* Hero Section */}
-       <section className="bg-stone-100 text-black py-6 md:py-12 px-6 sm:px-12 text-center mx-auto 
+       <section className="bg-stone-100 text-orange-600 py-6 md:py-12 px-6 sm:px-12 text-center mx-auto 
            border-b border-zinc-400 shadow-2xl">
          <p className="text-lg md:text-2xl lg:text-sm font-normal max-w-4xl mx-auto leading-relaxed">
            Whether you are looking for your next exciting job opportunity 
@@ -62,7 +62,7 @@ const HomePage = () => {
           <p>Find A Job That Suits Your Interest And Skills</p>
       </div>
         {/* Embedded Jobs Feed */}
-        <section className="mt-0">
+        <section className="">
           <JobPage isHome={true} />
         </section>
 
