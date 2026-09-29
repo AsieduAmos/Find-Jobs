@@ -19,7 +19,7 @@ const NaviBar = () => {
           {/* Logo Section */}
           <div className="flex items-center space-x-2">
             <img className="pointer-events-none select-none w-10 h-10 object-contain" src={FJ} alt="Find Job Logo" />
-            <span className="font-extrabold italic text-xl text-gray-800 tracking-tight">
+            <span className="font-extrabold italic text-xl text-indigo-900 tracking-tight">
               Find Job
             </span>
           </div>
