@@ -11,11 +11,11 @@ const JobDetails = () => {
     <div className="bg-indigo-50 min-h-screen pt-20">
       
       {/* Back Navigation Bar */}
-      <nav className="bg-gray-600 text-white py-4 shadow-sm">
+      <nav className="fixed top-16 w-full left-0 z-50 bg-stone-100 text-orange-600 py-4 shadow-md ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             to="/jobpage"
-            className="inline-flex items-center text-base font-medium hover:text-gray-200 transition-colors" 
+            className="inline-flex items-center text-base font-bold hover:text-orange-700 transition-colors" 
           >
             <FaArrowLeft className="mr-2 text-sm" />
             Back to Browse Jobs
@@ -24,7 +24,7 @@ const JobDetails = () => {
       </nav>
 
       {/* Main Layout Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">  
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-10">  
         {/* Responsive Grid Layout: Stacks vertically on mobile/tablet, side-by-side on large screens */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
           
@@ -36,22 +36,22 @@ const JobDetails = () => {
               <span className="inline-block bg-indigo-50 text-indigo-700 text-sm font-semibold px-3 py-1 rounded-full mb-3">
                 {job?.type}
               </span>
-              <h1 className="text-2xl md:text-3xl text-gray-800 font-bold mb-4">{job?.title}</h1>
+              <h1 className="text-2xl md:text-xl text-black font-bold mb-4">{job?.title}</h1>
               <div className="flex items-center justify-center md:justify-start text-gray-600 font-medium">
                 <FaMapMarker className="text-red-600 mr-2 text-sm flex-shrink-0" />
-                <p className="text-gray-700">{job?.location}</p>
+                <p className="text-red-600">{job?.location}</p>
               </div>
             </div>
 
             {/* Description & Salary Card */}
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl text-gray-800 font-bold mb-4">Job Description</h3>
+              <h3 className="text-xl text-black font-bold mb-4">Job Description</h3>
               <p className="text-gray-600 leading-relaxed mb-6 whitespace-pre-line">
                 {job?.description}
               </p>
               
-              <h3 className="text-xl text-gray-800 font-bold mb-2">Salary</h3>
-              <p className="text-indigo-700 font-semibold text-lg">{job?.salary}</p>
+              <h3 className="text-xl text-black font-bold mb-2">Salary Range</h3>
+              <p className="text-orange-500 font-semibold text-sm">{job?.salary}</p>
             </div>
           </main>
 
@@ -60,8 +60,8 @@ const JobDetails = () => {
             
             {/* Company Info Card */}
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl text-gray-800 font-bold mb-4 border-b pb-2">Company Information</h3>
-              <h4 className="text-lg text-gray-900 font-bold mb-2">{job?.company?.name}</h4>
+              <h3 className="text-xl text-orange-600 font-bold mb-4 border-b pb-2">Company Information</h3>
+              <h4 className="text-lg text-black font-bold mb-2">{job?.company?.name}</h4>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">{job?.company?.description}</p>
               
               <div className="space-y-3 pt-2">
@@ -82,7 +82,7 @@ const JobDetails = () => {
 
             {/* Admin Management Card */}
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl text-gray-800 font-bold mb-4 text-center">Manage Job</h3>
+              <h3 className="text-xl text-orange-600 font-bold mb-4 text-center">Manage Job</h3>
               <div className="space-y-3">
                 <Link
                   to={`/addjob/edit/${job?.id}`} 
