@@ -9,13 +9,11 @@ const HomePage = () => {
     
     <main className="w-full min-h-screen bg-stone-100 pt-16"> 
           {/* Hero Section */}
-       <section className="bg-stone-100 text-orange-600 py-6 md:py-12 px-6 sm:px-12 text-center mx-auto 
-           border-b border-zinc-400 shadow-2xl">
-         <p className="text-lg md:text-2xl lg:text-sm font-normal max-w-4xl mx-auto leading-relaxed">
-           Whether you are looking for your next exciting job opportunity 
-          or searching for the perfect employee, our platform bridges the gap. 
-         </p>
-      </section>
+           <div className="bg-orange-400 text-white py-6 md:py-8 px-6 sm:px-12 text-center mx-auto shadow-2xl 
+         font-bold">
+          <p> Whether you are looking for your next exciting job opportunity 
+          or searching for the perfect employee, our platform bridges the gap. </p>
+      </div>
 
      <div className="w-full aspect-[4/3] sm:aspect-video md:h-96 lg:h-[28rem]  bg-[url('/src/images/employer.png')]
             bg-cover bg-center bg-no-repeat relative flex flex-col justify-end md:block image-render-auto">
