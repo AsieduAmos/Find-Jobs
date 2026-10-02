@@ -9,7 +9,7 @@ const HomePage = () => {
     
     <main className="w-full min-h-screen bg-stone-100 pt-16"> 
           {/* Hero Section */}
-           <div className="bg-orange-400 text-white py-6 md:py-8 px-6 sm:px-12 text-center mx-auto shadow-2xl 
+           <div className="bg-stone-100 text-orange-400 py-6 md:py-8 px-6 sm:px-12 text-center mx-auto shadow-2xl 
          font-bold">
           <p> Whether you are looking for your next exciting job opportunity 
           or searching for the perfect employee, our platform bridges the gap. </p>
