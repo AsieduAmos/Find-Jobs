@@ -5,7 +5,7 @@ const postJob = () => {
   return (
     <>
       <div className='grid grid-cols-1 md:grid-cols-2 sm:mt-20 mt-10 px-4 bg-stone-200 sm:h-130 h-180'>
-     <div className='bg-stone-100 h-96 lg:h-[28rem]'>
+     <div className='bg-stone-100 sm:h-96 h-105 lg:h-[28rem]'>
         <div className='sm:my-10 my-2 mx-6 sm:pl-8 pl-1 h-94 bg-white shadow-2xl rounded-lg'>
           <h2 className='text-2xl md:text-3xl lg:text-4xl font-bold text-orange-400 sm:pt-20 pt-8 pb-4 px-4 mb-4 max-w-7xl mx-auto'>
           Streamline Your Hiring Process
