@@ -1,60 +1,86 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom' 
+import PostJob from '../components/postJob'
+
+
 
 
 import JobPage from './JobPage'
 
+
 const HomePage = () => {
   return (
     
-    <main className="w-full min-h-screen bg-stone-100 pt-16"> 
-          {/* Hero Section */}
-           <div className="bg-stone-100 text-orange-400 py-6 md:py-8 px-6 sm:px-12 text-center mx-auto shadow-2xl 
-         font-bold">
-          <p> Whether you are looking for your next exciting job opportunity 
-          or searching for the perfect employee, our platform bridges the gap. </p>
-      </div>
-
-     <div className="w-full aspect-[4/3] sm:aspect-video md:h-96 lg:h-[28rem]  bg-[url('/src/images/employer.png')]
-            bg-cover bg-center bg-no-repeat relative flex flex-col justify-end md:block image-render-auto">
-       
-          {/* Call to Action: Add Job */}
-        <div className="relative md:absolute md:bottom-6 md:left-1/2 md:-translate-x-1/2 bg-white text-black 
-            p-4 sm:p-6 md:p-6 w-11/12 max-w-3xl mx-auto shadow-xl rounded-xl text-center my-4 md:my-0  ">
-          <p className="text-base sm:text-lg md:text-xl lg:text-sm font-normal leading-relaxed ">
-             Streamline your hiring process.Post your job vacancies and connect with qualified
-             employees.
+<main className="w-full min-h-screen bg-white pt-16"> 
+       <PostJob />
+      <div className='grid grid-cols-1 md:grid-cols-2 sm:mt-20 mt-10 px-4 bg-stone-200 sm:h-130 h-180'>
+     <div className='bg-stone-100 h-96 lg:h-[28rem]'>
+        <div className='sm:my-10 my-2 mx-6 sm:pl-8 pl-1 h-94 bg-white shadow-2xl rounded-lg'>
+          <h2 className='text-2xl md:text-3xl lg:text-4xl font-bold text-orange-400 sm:pt-20 pt-8 pb-4 px-4 mb-4 max-w-7xl mx-auto'>
+          Streamline Your Hiring Process
+          </h2>
+          <p className='text-base sm:text-lg md:text-xl lg:text-sm text-stone-700 font-normal leading-relaxed 
+             px-6 max-w-7xl mx-auto'>
+             Post your job vacancies and connect with qualified employees. 
+            Our platform is designed to help you find  the ideal candidate for your organization. 
           </p>
-          <div className="mt-2 md:mt-4">
-            <NavLink to="/Addjob" className="inline-block bg-black text-white font-medium text-base md:text-lg 
-            px-6 py-2 rounded-xl shadow-lg hover:bg-orange-500 transition duration-300 ease-in-out">
+           <div className="mt-6 md:mt-16 text-center  ">
+             <NavLink to="/Addjob" className="inline-block bg-orange-400 text-white font-medium text-base md:text-lg 
+               px-10 py-1 rounded-xl shadow-lg hover:bg-orange-700 transition duration-300 ease-in-out">
               Add Job
             </NavLink>
           </div>
         </div>
-     </div>
+       </div>
+       <div className="w-full aspect-[4/3] sm:aspect-video md:h-96 lg:h-[28rem] bg-[url('/src/images/employer.png')]
+            bg-cover bg-center bg-no-repeat relative flex flex-col justify-end md:block image-render-auto">
+        <div className="text-center bg-white text-orange-400 sm:w-3/5 w-full mt-14 sm:mt-48 h-20 sm:ml-38 ml-1 shadow-2xl
+           mb-20 rounded-lg"> 
+            <p className="text-base sm:text-lg md:text-xl lg:text-sm font-semibold leading-relaxed sm:py-6 py-2 ">
+                   Connect with the right talent for your organization
+               </p>
+         </div>
+       </div>
+     
+  </div>   
+    
 
-      <div className="bg-orange-400 text-black py-6 md:py-6 px-6 sm:px-12 text-center mx-auto shadow-2xl rounded-lg
+   <div className="bg-orange-400 text-black py-6 md:py-6 px-6 sm:px-12 text-center mx-auto shadow-2xl rounded-lg
         text-white font-bold">
           <p>Unlock Your Professional Potential</p>
       </div>
-            {/* Section 2: Find Job Info Grid */}
-      <div className="w-full aspect-[4/3] sm:aspect-video md:h-96 lg:h-[28rem] bg-[url('/src/images/worriedlady.png')]
-            bg-cover bg-center bg-no-repeat relative flex flex-col justify-end md:block image-render-auto">
-          <div className="relative md:absolute md:bottom-16 md:left-1/2 md:-translate-x-1/5 bg-white text-black 
-            p-4 sm:p-6 md:p-6 w-11/12 max-w-3xl mx-auto shadow-xl rounded-xl text-center my-4 md:my-0  ">
-          <p className="text-base sm:text-lg md:text-xl lg:text-sm font-normal leading-relaxed ">
-             Skip the stress and let us match you with opportunities that perfectly fit your profession
+
+      <div className='grid grid-cols-1 md:grid-cols-2 sm:mt-20 mt-10 px-4 bg-stone-200 sm:h-130 h-180'>
+     <div className='bg-orange-400 h-96 lg:h-[28rem]'>
+        <div className='sm:my-10 my-2 mx-6 sm:pl-8 pl-1 h-94 bg-stone-100 shadow-2xl rounded-lg'>
+          <h2 className='text-2xl md:text-3xl lg:text-4xl font-bold text-orange-400 sm:pt-20 pt-8 pb-4 px-4 mb-4 max-w-7xl mx-auto'>
+          Find Your Job Opportunity Here
+          </h2>
+          <p className='text-base sm:text-lg md:text-xl lg:text-sm text-stone-700 font-normal leading-relaxed 
+             px-6 max-w-7xl mx-auto'>
+               Let us match you with opportunities that perfectly fit your profession and skills.
+              Explore all the most exciting job roles and take the next step in your career.
           </p>
-          {/* Call to Action: Find Job */}
-          <div className="pt-2">
-            <NavLink to="/jobpage" className="inline-block bg-orange-500 text-white font-medium text-base md:text-lg px-6 py-2
+           <div className="mt-6 md:mt-16 text-center ">
+            <NavLink to="/jobpage" className="inline-block bg-orange-500 text-white font-medium text-base md:text-lg px-10 py-1
              rounded-xl shadow-lg hover:bg-black transition duration-300 ease-in-out">
               Find Job
             </NavLink>
           </div>
         </div>
-      </div>  
+       </div>
+       <div className="w-full aspect-[4/3] sm:aspect-video md:h-96 lg:h-[28rem] bg-[url('/src/images/employee.jpg')]
+            bg-cover bg-center bg-no-repeat relative flex flex-col justify-end md:block image-render-auto">
+        <div className="text-center bg-white text-orange-400 sm:w-2/5 w-full mt-14 sm:mt-30 h-20 sm:ml-40 ml-1 shadow-2xl
+           mb-10 rounded-lg"> 
+            <p className="text-base sm:text-lg md:text-xl lg:text-sm font-semibold leading-relaxed sm:py-6 py-2 ">
+                  Skip The Stress And Find Job 
+               </p>
+         </div>
+       </div>
+     
+  </div>
+           
        <div className="bg-orange-400 text-black py-6 md:py-6 px-6 sm:px-12 text-center mx-auto shadow-2xl 
         text-white font-bold mt-8">
           <p>Find A Job That Suits Your Interest And Skills</p>
