@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { database } from '../config/firebase'
 import { collection, getDocs } from 'firebase/firestore'
 
+
 const JobPage = ({ isHome = false }) => {
   const [jobDetails, setJobDetails] = useState([])
   const [loading, setLoading] = useState(true)
