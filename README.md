@@ -19,11 +19,14 @@ Begin by cloning the project repository to your local machine and navigating int
 
 # Running the Application
 
-To run the application locally, you need to run both commands in different terminal
-* npm run server
+To run the application locally, you need to run the command below the terminal
 * npm run dev
  Now the application should be runing on http://localhost:5173/
 
 
 # Screenshot of various pages of the application
-![alt text](HomePage.png)![alt text](HomePage2.png)![alt text](<AddJob Page.png>)![alt text](JobsPage.png)![alt text](JobDetailPage.png)
+![alt text](HomePage.png)
+![alt text](<homePage 2.png>)
+![alt text](<AddJob Page.png>)
+![alt text](JobsPage.png)
+![alt text](JobDetailPage.png)
