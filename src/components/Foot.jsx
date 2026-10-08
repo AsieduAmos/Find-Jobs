@@ -1,5 +1,5 @@
 import React from 'react'
-import FJ from '../images/FJ.png'
+import { NavLink } from 'react-router-dom'
 import { FaMapMarker } from 'react-icons/fa'
 
 const Foot = () => {
@@ -10,28 +10,33 @@ const Foot = () => {
     <>
 
       <footer className="w-full mt-auto bg-gradient-to-b from-orange-400 to-orange-700 flex flex-col items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl px-6 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-4 w-full max-w-6xl px-6 py-10">
 
            {/* Contact Us Section */}
           <div className=" text-white flex flex-col justify-start space-y-2">
-            <h2 className="text-2xl md:text-2xl lg:text-xl font-bold pb-2 px-4 text-center">
+            <h2 className="text-2xl md:text-2xl lg:text-xl font-bold pb-2 px-4 text-center 
+                ">
               CONTACT US
             </h2>
-            <p className="text-sm sm:text-base md:text-lg font-normal leading-relaxed px-4">
+            <p className="text-sm sm:text-base md:text-lg font-normal  leading-relaxed px-4 
+                      font-style: italic">
               Email: info@findjob.com
             </p>
-            <p className="text-sm sm:text-base md:text-lg font-normal leading-relaxed px-4">
+            <p className="text-sm sm:text-base md:text-lg font-normal leading-relaxed px-4 
+                   font-style: italic">
               Phone: (233) 544956335
             </p>
-            <div className="text-white flex items-center gap-2 px-4 font-bold">
-              <FaMapMarker className="flex-shrink-0 text-white text-base" />
-              <span>Drobo</span>
+            <div className="text-white flex items-center gap-6 px-4 font-bold">
+              <FaMapMarker className="flex-shrink-0 text-white text-lg" />
+              <span className='
+               font-style: italic text-lg'>Drobo</span>
             </div>
           </div>
           
           {/* About Us Section */}
           <div className=" text-white flex flex-col justify-start">
-            <h2 className="text-2xl md:text-2xl lg:text-xl font-bold pb-2 px-4 text-center">
+            <h2 className="text-2xl md:text-2xl lg:text-xl font-bold pb-2 px-4 text-center 
+                ">
               ABOUT US
             </h2>
             <p className="text-base sm:text-lg md:text-xl lg:text-sm font-normal leading-relaxed 
@@ -43,6 +48,25 @@ const Foot = () => {
               to streamline the job search and hiring process for both parties.
             </p>
           </div>
+
+         <div className=" text-white flex flex-col ">
+            <h2 className="text-2xl md:text-2xl lg:text-xl font-bold pb-2 text-center 
+                 ">
+                 ALTERNATIVE LINKS
+            </h2>
+             <div className=" text-center font-style: italic ">
+             <NavLink to="/Addjob" className="inline-block text-white font-medium text-base md:text-lg 
+                  transition duration-300 ease-in-out">
+                Add Job
+             </NavLink>
+          </div>
+           <div className=" text-center font-style: italic ">
+                 <NavLink to="/jobpage" className="inline-block text-white font-medium text-base md:text-lg 
+                        transition duration-300 ease-in-out">
+                         Find Job
+                 </NavLink>
+            </div>
+        </div>
 
 
         </div>
