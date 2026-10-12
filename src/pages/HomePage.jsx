@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom' 
 import FindJob from '../components/FindJob'
 import JobPage from './JobPage'
-import PostJob from '../components/PostJob'
+import postJob from '../components/PostJob'
 
 
 const HomePage = () => {
@@ -10,7 +10,7 @@ const HomePage = () => {
     
 <main className="w-full min-h-screen bg-white pt-16"> 
   
-        <PostJob />
+        <postJob />
 
        <div className="bg-orange-400 text-black py-6 md:py-6 px-6 sm:px-12 text-center mx-auto shadow-2xl rounded-lg
            text-white font-bold">
