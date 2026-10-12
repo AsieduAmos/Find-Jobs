@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom' 
 
-const postJob = () => {
+const PostJob = () => {
   return (
     <>
       <div className='grid grid-cols-1 md:grid-cols-2 sm:mt-20 mt-10 px-4 bg-stone-200 sm:h-130 h-180'>
@@ -38,4 +38,4 @@ const postJob = () => {
   )
 }
 
-export default postJob
+export default PostJob
