@@ -9,12 +9,12 @@ const Foot = () => {
   return (
     <>
 
-      <footer className="w-full mt-auto bg-gradient-to-b from-orange-400 to-orange-700 flex flex-col items-center">
+      <footer className="w-full mt-auto bg-gradient-to-b from-orange-500 to-orange-900 flex flex-col items-center">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-4 w-full max-w-6xl px-6 py-10">
 
            {/* Contact Us Section */}
           <div className=" text-white flex flex-col justify-start space-y-2">
-            <h2 className="text-2xl md:text-2xl lg:text-xl font-bold pb-2 px-4 text-center 
+            <h2 className="text-2xl md:text-2xl lg:text-xl font-small pb-2 px-4 text-center 
                 ">
               CONTACT US
             </h2>
@@ -35,11 +35,11 @@ const Foot = () => {
           
           {/* About Us Section */}
           <div className=" text-white flex flex-col justify-start">
-            <h2 className="text-2xl md:text-2xl lg:text-xl font-bold pb-2 px-4 text-center 
+            <h2 className="text-2xl md:text-2xl lg:text-xl font-small pb-2 px-4 text-center 
                 ">
               ABOUT US
             </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-sm font-normal leading-relaxed 
+            <p className="text-base sm:text-lg md:text-xl lg:text-sm font-small leading-relaxed 
                     px-4 max-w-7xl mx-auto">
               FINDJOB is a specialized job board website that connects job seekers and employers. 
               The platform features an intuitive internal job board for employees to browse and 
@@ -50,18 +50,18 @@ const Foot = () => {
           </div>
 
          <div className=" text-white flex flex-col ">
-            <h2 className="text-2xl md:text-2xl lg:text-xl font-bold pb-2 text-center 
+            <h2 className="text-2xl md:text-2xl lg:text-xl font-small pb-2 text-center 
                  ">
                  ALTERNATIVE LINKS
             </h2>
              <div className=" text-center font-style: italic ">
-             <NavLink to="/Addjob" className="inline-block text-white font-medium text-base md:text-lg 
+             <NavLink to="/Addjob" className="inline-block text-white  text-base md:text-lg 
                   transition duration-300 ease-in-out">
                 Add Job
              </NavLink>
           </div>
            <div className=" text-center font-style: italic ">
-                 <NavLink to="/jobpage" className="inline-block text-white font-medium text-base md:text-lg 
+                 <NavLink to="/jobpage" className="inline-block text-white text-base md:text-lg 
                         transition duration-300 ease-in-out">
                          Find Job
                  </NavLink>

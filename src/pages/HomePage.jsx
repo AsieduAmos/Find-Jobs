@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom' 
-import PostJob from '../components/postJob'
+import PostJob from "../components/PostJob"
 import FindJob from '../components/FindJob'
 
 
