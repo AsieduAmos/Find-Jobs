@@ -9,17 +9,21 @@ const HomePage = () => {
   return (
     
 <main className="w-full min-h-screen bg-white pt-16"> 
-  
+
+       <div className="bg-gradient-to-b from-orange-400 to-orange-600 py-6 md:py-8 px-6 sm:px-12 text-center mx-auto shadow-xl 
+           text-white font-bold">
+           
+       </div>
         <PostJob />
 
-       <div className="bg-orange-400 text-black py-6 md:py-6 px-6 sm:px-12 text-center mx-auto shadow-2xl rounded-lg
+       <div className="bg-gradient-to-b from-orange-400 to-orange-600 py-6 md:py-6 px-6 sm:px-12 text-center mx-auto shadow-2xl rounded-lg
            text-white font-bold">
            <p>Unlock Your Professional Potential</p>
        </div>
 
        <FindJob />
            
-       <div className="bg-orange-400 text-black py-6 md:py-6 px-6 sm:px-12 text-center mx-auto shadow-2xl 
+       <div className="bg-gradient-to-b from-orange-400 to-orange-600 text-black py-6 md:py-6 px-6 sm:px-12 text-center mx-auto shadow-2xl 
         text-white font-bold mt-8">
           <p>Find A Job That Suits Your Interest And Skills</p>
       </div>
