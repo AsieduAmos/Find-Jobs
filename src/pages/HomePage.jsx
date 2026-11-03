@@ -16,7 +16,7 @@ const HomePage = () => {
        </div>
         <PostJob />
 
-       <div className="bg-gradient-to-b from-orange-400 to-orange-600 py-6 md:py-6 px-6 sm:px-12 text-center mx-auto shadow-2xl rounded-lg
+       <div className="bg-gradient-to-b from-orange-400 to-orange-600 py-6 md:py-6 px-6 sm:px-12 text-center mx-auto shadow-2xl 
            text-white font-bold">
            <p>Unlock Your Professional Potential</p>
        </div>
