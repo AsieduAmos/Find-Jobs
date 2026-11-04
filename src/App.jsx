@@ -6,6 +6,7 @@ import MainLayout from './layout/MainLayout'
 import JobPage from './pages/JobPage'
 import AddJob from './pages/AddJob'
 import HomePage from './pages/HomePage'
+import Login from './pages/Login'
 import PageNotFound from './pages/PageNotFound'
 import JobDetails, {jobLoader} from './pages/JobDetails'
 
@@ -35,6 +36,7 @@ const App = () => {
          <Route path='addjob' element={<AddJob submitJob={addJob}/>} />
          <Route path='jobpage' element={<JobPage/>} />
          <Route path='jobpage/:id' element={<JobDetails/>} loader={jobLoader}  />
+         <Route path='login' element={<Login/>} />
          <Route path='*' element={<PageNotFound />} />
        
 
