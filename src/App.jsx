@@ -7,6 +7,7 @@ import JobPage from './pages/JobPage'
 import AddJob from './pages/AddJob'
 import HomePage from './pages/HomePage'
 import Login from './pages/Login'
+import SignUp from './pages/SignUp'
 import PageNotFound from './pages/PageNotFound'
 import JobDetails, {jobLoader} from './pages/JobDetails'
 
@@ -37,7 +38,9 @@ const App = () => {
          <Route path='jobpage' element={<JobPage/>} />
          <Route path='jobpage/:id' element={<JobDetails/>} loader={jobLoader}  />
          <Route path='login' element={<Login/>} />
+         <Route path='signup' element={<SignUp/>} />
          <Route path='*' element={<PageNotFound />} />
+         
        
 
     </Route>
