@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { collection, addDoc } from 'firebase/firestore'
 import { database } from '../config/firebase'
+import NaviBar from '../components/NaviBar'
+import Foot from '../components/Foot'
+
 
 const AddJob = () => {
   const [title, setTitle] = useState('')
@@ -60,6 +63,8 @@ const AddJob = () => {
   }
 
   return (
+<>
+    <NaviBar />
     <section className="bg-slate-50 min-h-screen py-10 px-4 sm:px-2 mt-12">
 
       {/* Header */}
@@ -299,6 +304,9 @@ const AddJob = () => {
         </form>
       </div>
     </section>
+    <Foot />
+
+</>    
   )
 }
 

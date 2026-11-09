@@ -4,15 +4,19 @@ import FindJob from '../components/FindJob'
 import JobPage from './JobPage'
 import PostJob from '../components/PostJob'
 import { Link } from 'react-router-dom'
-import AuthNaviBar from '../components/AuthNavBar'
+import NaviBar from '../components/NaviBar'
+
 
 
 const HomePage = () => {
   return (
     
+<>  
+  <NaviBar />
+  
 <main className="w-full min-h-screen bg-white pt-16"> 
       
-      <AuthNaviBar />
+      
 
        <div className="bg-gradient-to-b from-orange-400 to-orange-600 py-6 md:py-6 px-6 sm:px-12 text-center 
        mx-auto shadow-xl text-white font-bold ">
@@ -49,6 +53,8 @@ const HomePage = () => {
 
      
     </main>
+
+</>    
   )
 }
 

@@ -1,9 +1,10 @@
 import React from 'react'
+import AuthNaviBar from '../components/AuthNavBar'
 
 const ResetPassword = () => {
   return (
   <>
-
+     <AuthNaviBar />
      <div className='mx-auto bg-slate-500 rounded-lg shadow-2xl relative mx-6 w-full sm:w-3/6 mt-20'>
         <form className='space-y-7 px-5 py-10 bg-white w-full text-stone-600'>
           <p className='text-4xl font-bold text-center'>Password Reset</p>

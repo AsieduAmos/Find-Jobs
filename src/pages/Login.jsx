@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import AuthNaviBar from '../components/AuthNavBar'
+import Foot from '../components/Foot'
 
 
 
@@ -60,7 +61,7 @@ const Login = () => {
         </form> 
       </div>
   
-
+   <Foot />
 </>
   )
 }

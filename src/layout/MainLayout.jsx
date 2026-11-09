@@ -8,7 +8,7 @@ const MainLayout = () => {
     <>
       
       <Outlet /> 
-      <Foot /> 
+      
     </>
   )
 }
