@@ -6,7 +6,7 @@ import Foot from '../components/Foot'
 const MainLayout = () => {
   return (
     <>
-      <NaviBar />
+      
       <Outlet /> 
       <Foot /> 
     </>

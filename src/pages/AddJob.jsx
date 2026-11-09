@@ -86,6 +86,7 @@ const AddJob = () => {
         <form onSubmit={formSubmit} className="space-y-4">
 
           {/* Job Type */}
+         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4"> 
           <div>
             <label
               htmlFor="type"
@@ -129,6 +130,7 @@ const AddJob = () => {
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
+        </div>          
 
           {/* Job Description */}
           <div>
@@ -152,6 +154,7 @@ const AddJob = () => {
           </div>
 
           {/* Salary */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label
               htmlFor="salary"
@@ -210,6 +213,7 @@ const AddJob = () => {
               onChange={(e) => setLocation(e.target.value)}
             />
           </div>
+        </div>
 
           {/* Company Section */}
           <div className="border-t border-gray-100 pt-5 my-4">
