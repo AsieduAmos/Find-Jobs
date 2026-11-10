@@ -5,6 +5,8 @@ import JobPage from './JobPage'
 import PostJob from '../components/PostJob'
 import { Link } from 'react-router-dom'
 import NaviBar from '../components/NaviBar'
+import Foot from '../components/Foot'
+ 
 
 
 
@@ -38,10 +40,9 @@ const HomePage = () => {
           <p>Find A Job That Suits Your Interest And Skills</p>
       </div>
         {/* Embedded Jobs Feed */}
-        
-          <JobPage isHome={true} />
+        <JobPage isHome={true} />
 
-      <div className='mb-12 mt-2 text-center ' >  
+         <div className='mb-12 mt-2 text-center ' >  
          <Link
            to={`/jobpage/`}
            className="inline-block md:w-1/5 w-2/3 text-white py-3 rounded-lg bg-orange-700  
@@ -50,9 +51,14 @@ const HomePage = () => {
                 Browse More Jobs 
          </Link>
       </div>
+        
+          
+
+     <Foot />
 
      
     </main>
+    
 
 </>    
   )

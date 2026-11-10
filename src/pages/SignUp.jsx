@@ -1,13 +1,47 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import AuthNaviBar from '../components/AuthNavBar'
+import {auth} from '../config/firebase'
+import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 
 const SignUp = () => {
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+  
+
+   const handleSignUp = async () => {
+    try {
+      await createUserWithEmailAndPassword(auth, email, password)
+      // Handle successful sign-up
+    } catch (error) {
+      // Handle sign-up errors
+      console.error('Error signing up:', error);
+    }
+  };
+
+  const continueWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+      // Handle successful sign-in
+    } catch (error) {
+      // Handle sign-up errors
+      console.error('Error signing up:', error);
+    }
+  };
+
+  
+
   return (
+   
 <>
       <AuthNaviBar />
  
-    <div className='mx-auto bg-slate-500 rounded-lg shadow-2xl relative mx-6 w-full sm:w-2/5 mt-20'>
+    <div className='mx-auto bg-slate-500 rounded-lg shadow-2xl relative mx-6 w-full sm:w-2/5 mt-30 mb-30'>
          <form className='space-y-6 px-5 py-12 bg-stone-100 w-full text-stone-700'>
            
             <div className='text-center mb-10'>
@@ -19,7 +53,8 @@ const SignUp = () => {
          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
            <div>
            <label className='block mb-2 text-lg font-medium text-stone-400'>Username*</label>
-           <input className='w-full p-3 bg-white rounded-md shadow-2xl'
+           <input onChange={(e) => setUsername(e.target.value)}
+                className='w-full p-3 bg-white rounded-md shadow-2xl'
                  type='username'
                  name='username'
                  id='username' 
@@ -30,30 +65,34 @@ const SignUp = () => {
             
            <div>
            <label className='block mb-2 text-lg font-medium text-stone-400'>Email</label>
-           <input className='w-full p-3 bg-white rounded-md shadow-2xl'
+           <input onChange={(e) => setEmail(e.target.value)}
+                className='w-full p-3 bg-white rounded-md shadow-2xl'
                  type='email'
                  name='email'
                  id='email' 
                  
-                 placeholder='Username '
+                 placeholder='Email '
             />
           </div>
         </div>
 
          <div>
            <label className='block mb-2 text-lg font-medium text-stone-400'>Phone Number*</label>
-           <input className='w-full p-3 bg-white rounded-md shadow-2xl'
-                 type='tel'
-                 name='phone'
-                 id='phone' 
+           <input onChange={(e) => setPhone(e.target.value)}
+                 className='w-full p-3 bg-white rounded-md shadow-2xl'
+                 type='number'
+                 name='number'
+                 id='number' 
                  required
                  placeholder='Phone Number'
             />
           </div>
 
+      <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
         <div>
           <label className='block mb-2 text-lg font-medium text-stone-400'>Password*</label>
-          <input className='w-full p-3 bg-white rounded-md shadow-2xl  '
+          <input onChange={(e) => setPassword(e.target.value)}
+                className='w-full p-3 bg-white rounded-md shadow-2xl  '
                 type='password'
                 name='Password'
                 id='Password' 
@@ -64,7 +103,8 @@ const SignUp = () => {
 
          <div>
           <label className='block mb-2 text-lg font-medium text-stone-400'>Re-enter Password*</label>
-          <input className='w-full p-3 bg-white rounded-md shadow-2xl  '
+          <input onChange={(e) => setConfirmPassword(e.target.value)}
+                className='w-full p-3 bg-white rounded-md shadow-2xl  '
                 type='password'
                 name='ConfirmPassword'
                 id='ConfirmPassword' 
@@ -72,19 +112,33 @@ const SignUp = () => {
                  placeholder='Password'
             />
          </div>
+       </div>  
 
-          <div className=' items-center'>
+          <div className='grid grid-cols-2 gap-4'>
+            <div className=' items-center'>
            <button
                type='submit' className=' text-white bg-blue-400 hover:shadow-xl cursor-pointer
-               border-white px-8 py-3 mt-4 mb-2' >
+               border-white px-8 py-3 mt-4 mb-2' 
+               onClick={handleSignUp}>
                CREATE
            </button>
 
-           
+          </div>
 
+           <div>
+            <button 
+            className=' text-white bg-red-600 hover:shadow-xl cursor-pointer
+               border-white px-8 py-3 mt-4 mb-2 '
+               onClick={continueWithGoogle}>
+             Continue with Google
+           
+            </button>
            </div>
+
+          </div>
         
         </form> 
+        
       </div>
   
 

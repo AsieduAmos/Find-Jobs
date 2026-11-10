@@ -3,11 +3,16 @@ import { useLoaderData, Link } from 'react-router-dom'
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa'
 import { doc, getDoc } from 'firebase/firestore'
 import { database } from '../config/firebase'
+import Foot from '../components/Foot'
+import NaNviBar from '../components/NaviBar'
 
 const JobDetails = () => {
   const jobDetails = useLoaderData()
 
   return (
+ 
+<>  
+    <NaNviBar />
     <div className="bg-indigo-50 min-h-screen pt-20">
 
       {/* Back Navigation Bar */}
@@ -147,6 +152,10 @@ const JobDetails = () => {
         </div>
       </div>
     </div>
+    <Foot />
+
+</>
+
   )
 }
 

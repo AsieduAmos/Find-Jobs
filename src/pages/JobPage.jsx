@@ -3,6 +3,8 @@ import { FaMapMarker } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { database } from '../config/firebase'
 import { collection, getDocs } from 'firebase/firestore'
+import NaviBar from '../components/NaviBar'
+import Foot from '../components/Foot'
 
 
 const JobPage = ({ isHome = false }) => {
@@ -33,6 +35,8 @@ const JobPage = ({ isHome = false }) => {
   }, [isHome])
 
   return (
+<>
+    <NaviBar />
     <section className="bg-slate-100 py-12">
       {/* Dynamic Heading Section */}
       <div className="bg-stone-100 shadow-sm mb-4">
@@ -108,7 +112,11 @@ const JobPage = ({ isHome = false }) => {
           </div>
         )}
       </div>
+      
     </section>
+    {!isHome && <Foot />}
+    
+</>
   )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import AuthNaviBar from '../components/AuthNavBar'
-import Foot from '../components/Foot'
+
 
 
 
@@ -12,7 +12,7 @@ const Login = () => {
 <>
    <AuthNaviBar />
  
-    <div className='mx-auto bg-slate-500 rounded-lg shadow-2xl relative mx-6 w-full sm:w-2/5 mt-20'>
+    <div className='mx-auto bg-slate-500 rounded-lg shadow-2xl relative mx-6 w-full sm:w-2/5 mt-30 mb-30'>
          <form className='space-y-6 px-5 py-12 bg-stone-100 w-full text-stone-700'>
             <p className='text-4xl font-bold text-stone-600 '>Sign In</p>
 
@@ -61,7 +61,7 @@ const Login = () => {
         </form> 
       </div>
   
-   <Foot />
+   
 </>
   )
 }
