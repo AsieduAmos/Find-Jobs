@@ -1,8 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import AuthNaviBar from '../components/AuthNavBar'
-import {auth} from '../config/firebase'
+import {auth, googleProvider} from '../config/firebase'
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 
 const SignUp = () => {
@@ -11,12 +10,25 @@ const SignUp = () => {
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('');
 
-  
+    // Initialize the navigate function from react-router-dom
+    const navigate = useNavigate();
 
-   const handleSignUp = async () => {
+   const handleSignUp = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    // checking if passwords match
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return; // Stop further execution if passwords don't match
+    }
+
     try {
-      await createUserWithEmailAndPassword(auth, email, password)
+      await createUserWithEmailAndPassword(auth,  email,  password,);
+       // Navigate to the home page after successful sign-up
+      navigate('/login');
       // Handle successful sign-up
     } catch (error) {
       // Handle sign-up errors
@@ -24,11 +36,15 @@ const SignUp = () => {
     }
   };
 
-  const continueWithGoogle = async () => {
+  const continueWithGoogle = async (e) => {
+    e.preventDefault();
     try {
       await signInWithPopup(auth, googleProvider);
+      // Navigate to the home page after successful sign-in
+      navigate('/login');
       // Handle successful sign-in
     } catch (error) {
+      setError('err.message');
       // Handle sign-up errors
       console.error('Error signing up:', error);
     }
@@ -41,8 +57,9 @@ const SignUp = () => {
 <>
       <AuthNaviBar />
  
-    <div className='mx-auto bg-slate-500 rounded-lg shadow-2xl relative mx-6 w-full sm:w-2/5 mt-30 mb-30'>
-         <form className='space-y-6 px-5 py-12 bg-stone-100 w-full text-stone-700'>
+    <div className='mx-auto bg-slate-500 rounded-lg shadow-2xl relative mx-6 w-full sm:w-2/5 mt-18 mb-30'>
+         <form onSubmit={handleSignUp}
+          className='space-y-6 px-5 py-12 bg-stone-100 w-full text-stone-700'>
            
             <div className='text-center mb-10'>
                  <p className='text-3xl font-bold text-stone-600 mb-2 '>Sign Up</p>
@@ -50,12 +67,14 @@ const SignUp = () => {
             
             </div>
 
+            
+
          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
            <div>
            <label className='block mb-2 text-lg font-medium text-stone-400'>Username*</label>
            <input onChange={(e) => setUsername(e.target.value)}
                 className='w-full p-3 bg-white rounded-md shadow-2xl'
-                 type='username'
+                 type='text'
                  name='username'
                  id='username' 
                  required
@@ -70,7 +89,7 @@ const SignUp = () => {
                  type='email'
                  name='email'
                  id='email' 
-                 
+                 required
                  placeholder='Email '
             />
           </div>
@@ -80,7 +99,7 @@ const SignUp = () => {
            <label className='block mb-2 text-lg font-medium text-stone-400'>Phone Number*</label>
            <input onChange={(e) => setPhone(e.target.value)}
                  className='w-full p-3 bg-white rounded-md shadow-2xl'
-                 type='number'
+                 type='tel'
                  name='number'
                  id='number' 
                  required
@@ -127,8 +146,8 @@ const SignUp = () => {
 
            <div>
             <button 
-            className=' text-white bg-red-600 hover:shadow-xl cursor-pointer
-               border-white px-8 py-3 mt-4 mb-2 '
+            className=' text-red-600  hover:text-red-700 hover:bg-white cursor-pointer
+               border-white px-8 py-3 mt-6 mb-2 '
                onClick={continueWithGoogle}>
              Continue with Google
            
