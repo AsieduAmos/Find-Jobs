@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { collection, addDoc } from 'firebase/firestore'
-import { database } from '../config/firebase'
+import { database, auth } from '../config/firebase'
+import { onAuthStateChanged } from 'firebase/auth'
+
 import NaviBar from '../components/NaviBar'
 import Foot from '../components/Foot'
 
 
 const AddJob = () => {
+
+  const [user, setUser] = useState(null)
+  const [checkingAuth, setCheckingAuth] = useState(true)
+
   const [title, setTitle] = useState('')
   const [type, setType] = useState('Full-Time')
   const [description, setDescription] = useState('')
@@ -20,8 +26,29 @@ const AddJob = () => {
 
   const navigate = useNavigate()
 
+  // Check if the user is authenticated
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser)
+      } else {
+        // Redirect to login page if not authenticated
+        navigate('/login')
+      }
+      setCheckingAuth(false)
+    })
+
+    return () => unsubscribe()
+  }, [navigate])
+
   const formSubmit = async (e) => {
     e.preventDefault()
+
+    //extra safty check to ensure user is authenticated before allowing job submission
+    if (!user) {
+      setError('You must be logged in to post a job.')
+      return
+    }
 
     setLoading(true)
     setError('')
@@ -60,6 +87,19 @@ const AddJob = () => {
     } finally {
       setLoading(false)
     }
+  }
+  
+  // Show a loading state while checking authentication
+  if (checkingAuth) {
+      return (
+      <>
+        <NaviBar />
+        <div className="min-h-screen flex items-center justify-center bg-slate-50">
+          <p className="text-gray-600 font-semibold">Checking authentication...</p>
+        </div>
+        <Foot />
+      </>
+    )
   }
 
   return (

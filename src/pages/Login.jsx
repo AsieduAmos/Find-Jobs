@@ -27,7 +27,7 @@ const Login = () => {
          await signInWithEmailAndPassword(auth, email, password);
 
          // Navigate to the addjob page after successful login
-         navigate('/homepage');
+         navigate('/addjob');
       } catch (err) {
          setError('Invalid email or password. Please try again.');
       } finally {

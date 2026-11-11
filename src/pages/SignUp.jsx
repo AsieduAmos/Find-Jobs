@@ -27,7 +27,7 @@ const SignUp = () => {
 
     try {
       await createUserWithEmailAndPassword(auth,  email,  password,);
-       // Navigate to the home page after successful sign-up
+       // Navigate to the login page after successful sign-up
       navigate('/login');
       // Handle successful sign-up
     } catch (error) {
@@ -40,7 +40,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       await signInWithPopup(auth, googleProvider);
-      // Navigate to the home page after successful sign-in
+      // Navigate to the login page after successful sign-in
       navigate('/login');
       // Handle successful sign-in
     } catch (error) {
