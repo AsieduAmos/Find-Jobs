@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { collection, addDoc } from 'firebase/firestore'
 import { database, auth } from '../config/firebase'
 import { onAuthStateChanged } from 'firebase/auth'
-
 import NaviBar from '../components/NaviBar'
 import Foot from '../components/Foot'
 
@@ -12,6 +11,7 @@ const AddJob = () => {
 
   const [user, setUser] = useState(null)
   const [checkingAuth, setCheckingAuth] = useState(true)
+  const [showAuthPopup, setShowAuthPopup] = useState(false)
 
   const [title, setTitle] = useState('')
   const [type, setType] = useState('Full-Time')
@@ -32,14 +32,21 @@ const AddJob = () => {
       if (currentUser) {
         setUser(currentUser)
       } else {
-        // Redirect to login page if not authenticated
-        navigate('/login')
+         //show the popup to inform the user they need to log in
+        setShowAuthPopup(true)
       }
+     
       setCheckingAuth(false)
     })
 
     return () => unsubscribe()
-  }, [navigate])
+  }, [])
+
+  const handleLoginRedirect = () => {
+    setShowAuthPopup(false)
+    navigate('/login')
+  }
+
 
   const formSubmit = async (e) => {
     e.preventDefault()
@@ -105,6 +112,32 @@ const AddJob = () => {
   return (
 <>
     <NaviBar />
+
+     {/* Login Required Popup Modal */}
+      {showAuthPopup && (
+        <div className="fixed inset-0 z-0 flex items-center justify-center bg-white/30 backdrop-blur-sm px-4">
+          <div className="bg-white rounded-xl shadow-2xl max-w-sm w-full p-6 text-center border border-gray-100">
+            <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-orange-100 mb-4">
+              <span className="text-orange-600 text-xl font-bold">!</span>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              Not Logged In
+            </h3>
+            <p className="text-sm text-gray-600 mb-6">
+              Sorry, Please log in to post a job vacancy.
+            </p>
+            <button
+              onClick={handleLoginRedirect}
+              className="w-full bg-orange-600 text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-orange-700 
+              transition duration-200 text-sm"
+            >
+              Go to Login Page
+            </button>
+          </div>
+        </div>
+      )}
+
+
     <section className="bg-slate-50 min-h-screen py-10 px-4 sm:px-2 mt-12">
 
       {/* Header */}
@@ -143,7 +176,8 @@ const AddJob = () => {
             <select
               id="type"
               name="type"
-              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-gray-800"
+              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 bg-white focus:outline-none focus:ring-2 
+              focus:ring-indigo-500 focus:border-indigo-500 text-sm text-gray-800"
               required
               value={type}
               onChange={(e) => setType(e.target.value)}
@@ -168,7 +202,8 @@ const AddJob = () => {
               type="text"
               id="title"
               name="title"
-              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-gray-800"
+              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500
+               focus:border-indigo-500 text-sm text-gray-800"
               placeholder="Job Title (e.g. Store Keeper)"
               required
               value={title}
@@ -190,7 +225,8 @@ const AddJob = () => {
               id="description"
               name="description"
               rows="4"
-              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-gray-800"
+              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 
+              focus:border-indigo-500 text-sm text-gray-800"
               placeholder="Describe the main responsibilities and requirements..."
               required
               value={description}
@@ -211,7 +247,8 @@ const AddJob = () => {
             <select
               name="salary"
               id="salary"
-              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-gray-800"
+              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 bg-white focus:outline-none focus:ring-2 
+              focus:ring-indigo-500 focus:border-indigo-500 text-sm text-gray-800"
               required
               value={salary}
               onChange={(e) => setSalary(e.target.value)}
@@ -251,7 +288,8 @@ const AddJob = () => {
               type="text"
               id="location"
               name="location"
-              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-gray-800"
+              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 
+              focus:border-indigo-500 text-sm text-gray-800"
               placeholder="Location (e.g. Drobo)"
               required
               value={location}
@@ -280,7 +318,8 @@ const AddJob = () => {
               type="text"
               id="companyName"
               name="companyName"
-              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-gray-800"
+              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 
+              focus:border-indigo-500 text-sm text-gray-800"
               placeholder="Shop or Company Name (e.g. ABC Company)"
               required
               value={companyName}
@@ -322,7 +361,8 @@ const AddJob = () => {
               type="tel"
               id="phone"
               name="phone"
-              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm text-gray-800"
+              className="border border-gray-300 rounded-lg w-full py-2.5 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500
+               focus:border-indigo-500 text-sm text-gray-800"
               placeholder="e.g. +233 123 456 789"
               required
               value={phone}
@@ -335,7 +375,8 @@ const AddJob = () => {
             <button
               type="submit"
               disabled={loading}
-              className="bg-orange-600 text-white font-bold py-3 px-12 rounded-lg shadow-xl hover:bg-orange-800 focus:ring-4 focus:ring-indigo-100 transition duration-200 text-sm disabled:bg-gray-400 disabled:cursor-not-allowed"
+              className="bg-orange-600 text-white font-bold py-3 px-12 rounded-lg shadow-xl hover:bg-orange-800 focus:ring-4
+               focus:ring-indigo-100 transition duration-200 text-sm disabled:bg-gray-400 disabled:cursor-not-allowed"
             >
               {loading ? 'Posting...' : 'Post Job'}
             </button>
