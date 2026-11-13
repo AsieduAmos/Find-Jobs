@@ -40,8 +40,8 @@ const SignUp = () => {
     e.preventDefault();
     try {
       await signInWithPopup(auth, googleProvider);
-      // Navigate to the login page after successful sign-in
-      navigate('/login');
+      // Navigate to the add job page after successful sign-in
+      navigate('/addjob');
       // Handle successful sign-in
     } catch (error) {
       setError('err.message');
