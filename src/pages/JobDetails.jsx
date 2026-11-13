@@ -1,43 +1,84 @@
 import React, {useState, useEffect} from 'react'
-import { useLoaderData, Link, Navigate} from 'react-router-dom'
+import { useLoaderData, Link, useNavigate} from 'react-router-dom'
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa'
 import { doc, getDoc } from 'firebase/firestore'
 import {getAuth, onAuthStateChanged} from 'firebase/auth'
 import { database } from '../config/firebase'
 import Foot from '../components/Foot'
-import NaNviBar from '../components/NaviBar'
+import NaviBar from '../components/NaviBar'
+
+
 
 const JobDetails = () => {
   const jobDetails = useLoaderData()
-  const [user, settUser] = useState(null)
-  const [authLoading, setAuthLoading] = useState(true)
+  const navigate = useNavigate()
+  const auth = getAuth()
 
 
-  useEffect(() => {
-    const auth = getAuth()
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      settUser(currentUser)
-      setAuthLoading(false)
-    })
+  const [user, setUser] = useState(null)
+  const [checkingAuth, setCheckingAuth] = useState(true)
+  const [showAuthPopup, setShowAuthPopup] = useState(false)
+  
+
+   //check if the user is authenticated
+   useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+        if (currentUser) {
+          setUser(currentUser)
+          setShowAuthPopup(false) // Hide the popup if the user is logged in
+        } else {
+          setUser(null)
+           //show the popup to inform the user they need to log in
+          setShowAuthPopup(true)
+        }
+       
+        setCheckingAuth(false)
+      })
     
     return () => unsubscribe()
-  }, [])
+  }, [auth])
+
+  const handleLoginRedirect = () => {
+    navigate('/login', { replace: true })
+  }
 
   // Show a loading state while checking authentication
-  if (authLoading) {
+  if (checkingAuth) {
     return 
     <div className="text-center mt-20 text-gray-600">Loading...</div>
   }
 
-  // Redirect to login if the user is not authenticated
-  if (!user) {
-    return <Navigate to="/login" replace />
-  }
 
   return (
  
 <>  
-    <NaNviBar />
+    <NaviBar />
+
+  {/* Login Required Popup Modal */}
+      {showAuthPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/30 backdrop-blur-sm px-4">
+          <div className="bg-white rounded-xl shadow-2xl max-w-sm w-full p-6 text-center border border-gray-100">
+            <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-orange-100 mb-4">
+              <span className="text-orange-600 text-xl font-bold">!</span>
+            </div>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              Not Logged In
+            </h3>
+            <p className="text-sm text-gray-600 mb-6">
+              Sorry, Please log in to post a job vacancy.
+            </p>
+            <button
+              onClick={handleLoginRedirect}
+              className="w-full bg-orange-600 text-white font-semibold py-2.5 px-4 rounded-lg hover:bg-orange-700 
+              transition duration-200 text-sm"
+            >
+              Go to Login Page
+            </button>
+          </div>
+        </div>
+      )}
+
+
     <div className="bg-indigo-50 min-h-screen pt-20">
 
       {/* Back Navigation Bar */}
