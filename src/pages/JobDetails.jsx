@@ -1,13 +1,38 @@
-import React from 'react'
-import { useLoaderData, Link } from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import { useLoaderData, Link, Navigate} from 'react-router-dom'
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa'
 import { doc, getDoc } from 'firebase/firestore'
+import {getAuth, onAuthStateChanged} from 'firebase/auth'
 import { database } from '../config/firebase'
 import Foot from '../components/Foot'
 import NaNviBar from '../components/NaviBar'
 
 const JobDetails = () => {
   const jobDetails = useLoaderData()
+  const [user, settUser] = useState(null)
+  const [authLoading, setAuthLoading] = useState(true)
+
+
+  useEffect(() => {
+    const auth = getAuth()
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      settUser(currentUser)
+      setAuthLoading(false)
+    })
+    
+    return () => unsubscribe()
+  }, [])
+
+  // Show a loading state while checking authentication
+  if (authLoading) {
+    return 
+    <div className="text-center mt-20 text-gray-600">Loading...</div>
+  }
+
+  // Redirect to login if the user is not authenticated
+  if (!user) {
+    return <Navigate to="/login" replace />
+  }
 
   return (
  
