@@ -1,5 +1,6 @@
+
 import React, {useState}from 'react'
-import { Link, useNavigate} from 'react-router-dom'
+import { Link, useNavigate, useLocation} from 'react-router-dom'
 import {auth,} from '../config/firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import AuthNaviBar from '../components/AuthNavBar'
@@ -16,6 +17,12 @@ const Login = () => {
 
 
    const navigate = useNavigate();
+   const location = useLocation();
+
+   //Check if a previous location was explicitly passed in React Router state
+   const from = location.state?.from;
+
+
 
    const handleLogin = async (e) => {
       e.preventDefault();
@@ -26,9 +33,16 @@ const Login = () => {
          //authenticate the user with Firebase
          await signInWithEmailAndPassword(auth, email, password);
 
-         // Navigate to the addjob page after successful login
-         navigate('/addjob');
-      } catch (err) {
+         if (from) {
+            // 1. Go to the exact route passed in location.state
+            navigate(from, { replace: true });
+          } 
+       else {
+        // 3. Default fallback if they opened /login directly in a new tab
+        navigate('/addjob', { replace: true });
+      }
+          
+         } catch (err) {
          setError('Invalid email or password. Please try again.');
       } finally {
          setLoading(false);

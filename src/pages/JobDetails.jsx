@@ -65,7 +65,7 @@ const JobDetails = () => {
               Not Logged In
             </h3>
             <p className="text-sm text-gray-600 mb-6">
-              Sorry, Please log in to post a job vacancy.
+              Sorry, Please log in to see job details and apply.
             </p>
             <button
               onClick={handleLoginRedirect}
