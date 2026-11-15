@@ -16,10 +16,10 @@ const PostJob = () => {
             Our platform is designed to help you find  the ideal candidate for your organization. 
           </p>
            <div className="mt-6 md:mt-16 text-center  ">
-             <NavLink to="/Addjob" className="inline-block bg-orange-400 text-white font-medium text-base md:text-lg 
+             <a href="/Addjob" className="inline-block bg-orange-400 text-white font-medium text-base md:text-lg 
                px-10 py-1 rounded-xl shadow-lg hover:bg-orange-700 transition duration-300 ease-in-out">
               Add Job
-            </NavLink>
+            </a>
           </div>
         </div>
        </div>
