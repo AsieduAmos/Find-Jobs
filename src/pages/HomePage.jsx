@@ -43,13 +43,13 @@ const HomePage = () => {
         <JobPage isHome={true} />
 
          <div className='mb-12 mt-2 text-center ' >  
-         <Link
-           to={`/jobpage/`}
-           className="inline-block md:w-1/5 w-2/3 text-white py-3 rounded-lg bg-orange-700  
-               hover:bg-orange-900 transition text-xl font-bold shadow-sm"
-            >
-                Browse More Jobs 
-         </Link>
+         <a href="/jobpage"
+         className="inline-block md:w-1/5 w-2/3 text-white py-3 rounded-lg bg-orange-700  
+               hover:bg-orange-900 transition text-xl font-bold shadow-sm">
+            Browse More Jobs
+         </a>
+          
+          
       </div>
         
           
