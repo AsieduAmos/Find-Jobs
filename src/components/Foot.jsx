@@ -55,16 +55,16 @@ const Foot = () => {
                  ALTERNATIVE LINKS
             </h2>
              <div className=" text-center font-style: italic ">
-             <NavLink to="/Addjob" className="inline-block text-white  text-base md:text-lg 
+             <a href="/Addjob" className="inline-block text-white  text-base md:text-lg 
                   transition duration-300 ease-in-out">
                 Add Job
-             </NavLink>
+             </a>
           </div>
            <div className=" text-center font-style: italic ">
-                 <NavLink to="/jobpage" className="inline-block text-white text-base md:text-lg 
+                 <a href="/jobpage" className="inline-block text-white text-base md:text-lg 
                         transition duration-300 ease-in-out">
                          Find Job
-                 </NavLink>
+                 </a>
             </div>
         </div>
 
