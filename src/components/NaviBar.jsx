@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import FJ from '../images/FJ.png'
-import { NavLink } from 'react-router-dom'  
+import { NavLink, Link} from 'react-router-dom' 
+ 
 
 const NaviBar = () => {
   const [isOpen, setIsOpen] = useState(false);

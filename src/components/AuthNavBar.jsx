@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import FJ from '../images/FJ.png'
-import { NavLink } from 'react-router-dom'  
+import { NavLink, Link } from 'react-router-dom'  
 
 const AuthNaviBar = () => {
  'text-white bg-black border border-white font-semibold text-lg lg:text-base px-6 py-3 lg:px-4 lg:py-2 text-center rounded-md cursor-pointer hover:bg-orange-400 hover:text-white transition duration-300 ease-in-out';
