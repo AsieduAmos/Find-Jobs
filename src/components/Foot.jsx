@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import { FaMapMarker } from 'react-icons/fa'
 
 const Foot = () => {
