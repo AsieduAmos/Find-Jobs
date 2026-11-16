@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import FindJob from '../components/FindJob'
 import JobPage from './JobPage'
 import PostJob from '../components/PostJob'
-import { Link } from 'react-router-dom'
 import NaviBar from '../components/NaviBar'
 import Foot from '../components/Foot'
  
