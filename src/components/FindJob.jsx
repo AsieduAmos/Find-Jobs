@@ -16,10 +16,10 @@ const FindJob = () => {
                      Explore all the most exciting job roles and take the next step in your career.
                  </p>
                   <div className="mt-6 md:mt-16 text-center ">
-                   <a href="/jobpage" className="inline-block bg-orange-500 text-white font-medium text-base md:text-lg px-10 py-1
+                   <Link to="/jobpage" className="inline-block bg-orange-500 text-white font-medium text-base md:text-lg px-10 py-1
                     rounded-xl shadow-lg hover:bg-black transition duration-300 ease-in-out">
                      Find Job
-                   </a>
+                   </Link>
                  </div>
                </div>
               </div>

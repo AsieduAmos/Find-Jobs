@@ -12,12 +12,12 @@ const AuthNaviBar = () => {
           
           {/* Logo Section */}
           <div className="flex items-center space-x-2">
-            <a href="/">
+            <Link to="/">
               <img className="pointer-events-none select-none w-10 h-10 object-contain" src={FJ} alt="Find Job Logo" />
-            </a>
-            <a href="/" className=" font-extrabold italic text-xl text-indigo-900 tracking-tight">
+            </Link>
+            <Link to="/" className=" font-extrabold italic text-xl text-indigo-900 tracking-tight">
               Find Job
-            </a>
+            </Link>
           </div>
 
           <div>
