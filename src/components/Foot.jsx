@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FaMapMarker } from 'react-icons/fa'
 
 const Foot = () => {
@@ -55,16 +55,16 @@ const Foot = () => {
                  ALTERNATIVE LINKS
             </h2>
              <div className=" text-center font-style: italic ">
-             <a href="/Addjob" className="inline-block text-white  text-base md:text-lg 
+             <Link to="/Addjob" className="inline-block text-white  text-base md:text-lg 
                   transition duration-300 ease-in-out">
                 Add Job
-             </a>
+             </Link>
           </div>
            <div className=" text-center font-style: italic ">
-                 <a href="/jobpage" className="inline-block text-white text-base md:text-lg 
+                 <Link to="/jobpage" className="inline-block text-white text-base md:text-lg 
                         transition duration-300 ease-in-out">
                          Find Job
-                 </a>
+                 </Link>
             </div>
         </div>
 
