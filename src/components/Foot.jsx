@@ -24,7 +24,7 @@ const Foot = () => {
             </p>
             <p className="text-sm sm:text-base md:text-lg font-normal leading-relaxed px-4 
                    font-style: italic">
-              Phone: (233) 544956335
+              Phone: (233) 
             </p>
             <div className="text-white flex items-center gap-6 px-4 font-bold">
               <FaMapMarker className="flex-shrink-0 text-white text-lg" />
