@@ -74,18 +74,14 @@ const NaviBar = () => {
       {isOpen && (
         <div className="lg:hidden id=mobile-menu bg-white border-t border-gray-100 shadow-inner">
           <div className="px-4 pt-2 pb-4 space-y-3 flex flex-col">
-            <NavLink to="/" className={activeStyle} onClick={() => setIsOpen(false)}>Home</NavLink>
-            <NavLink to="/addjob" className={activeStyle} onClick={() => setIsOpen(false)}>Add Job</NavLink>
-            <NavLink to="/jobpage" className={activeStyle} onClick={() => setIsOpen(false)}>Jobs</NavLink>
-            <NavLink to="/login" className='bg-white text-stone-600  border border-stone-200
-              text-xs font-medium px-4 py-2 lg:px-4  text-center rounded-md shadow-xl hover:shadow-2xl 
-              cursor-pointer transition duration-300 ease-in-out mr-4'
-              onClick={() => setIsOpen(false)}>LOGIN
+            <NavLink to="/" className="text-gray-800 ml-4 mt-2 font-medium" onClick={() => setIsOpen(false)}>Home</NavLink>
+            <NavLink to="/addjob" className="text-gray-800 ml-4 font-medium" onClick={() => setIsOpen(false)}>Add Job</NavLink>
+            <NavLink to="/jobpage" className="text-gray-800 ml-4 font-medium" onClick={() => setIsOpen(false)}>Jobs</NavLink>
+            <NavLink to="/login" className="text-orange-500 ml-4 font-medium"
+              onClick={() => setIsOpen(false)}>Log In
             </NavLink>
-            <NavLink to="/signup" className='bg-orange-400 hover:bg-orange-600 text-white 
-              font-medium text-xs px-4 py-2 lg:px-4  text-center rounded-md
-              cursor-pointer transition duration-300 ease-in-out'
-              onClick={() => setIsOpen(false)}>SIGN UP
+            <NavLink to="/signup" className="text-orange-500 ml-4 font-medium"
+              onClick={() => setIsOpen(false)}>Sign Up
             </NavLink>
           </div>
         </div>
