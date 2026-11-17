@@ -9,8 +9,8 @@ const NaviBar = () => {
   // consistent styling across mobile and desktop
   const activeStyle = ({ isActive }) => 
     isActive 
-      ? 'bg-orange-600 hover:bg-orange-900 text-white font-semibold text-lg lg:text-base px-6 py-3 lg:px-4 lg:py-2 text-center rounded-md cursor-pointer transition duration-300 ease-in-out'
-      : 'text-white bg-black border border-white font-semibold text-lg lg:text-base px-6 py-3 lg:px-4 lg:py-2 text-center rounded-md cursor-pointer hover:bg-orange-400 hover:text-white transition duration-300 ease-in-out';
+      ? 'bg-orange-600 hover:bg-orange-900 text-white font-medium text-lg lg:text-base px-4 py-2 lg:px-4 lg:py-2 text-center rounded-md cursor-pointer transition duration-300 ease-in-out'
+      : 'text-white bg-black border border-white font-semibold text-lg lg:text-base px-4 py-2 lg:px-4 lg:py-2 text-center rounded-md cursor-pointer hover:bg-orange-400 hover:text-white transition duration-300 ease-in-out';
   
   return (
     <nav className="fixed top-0 left-0 w-full border-b border-white shadow-xl bg-white z-50 mb-20">
@@ -29,11 +29,22 @@ const NaviBar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4">
             <NavLink to="/" className={activeStyle}>Home</NavLink>
             <NavLink to="/addjob" className={activeStyle}>Add Job</NavLink>
             <NavLink to="/jobpage" className={activeStyle}>Jobs</NavLink>
+            <div className='ml-70'>
+              <NavLink to="/login" className='bg-white text-stone-600  border border-stone-200
+                text-xs font-medium px-4 py-2 lg:px-4  text-center rounded-md shadow-xl hover:shadow-2xl 
+                cursor-pointer transition duration-300 ease-in-out mr-4'>LOGIN</NavLink>
+
+             <NavLink to="/signup" className='bg-orange-400 hover:bg-orange-600 text-white 
+                font-medium text-xs px-4 py-2 lg:px-4  text-center rounded-md
+                cursor-pointer transition duration-300 ease-in-out'>SIGN UP</NavLink>
           </div>
+       </div>
+          
+         
 
           {/* Mobile Hamburger Button */}
           <div className="flex lg:hidden">
@@ -66,6 +77,16 @@ const NaviBar = () => {
             <NavLink to="/" className={activeStyle} onClick={() => setIsOpen(false)}>Home</NavLink>
             <NavLink to="/addjob" className={activeStyle} onClick={() => setIsOpen(false)}>Add Job</NavLink>
             <NavLink to="/jobpage" className={activeStyle} onClick={() => setIsOpen(false)}>Jobs</NavLink>
+            <NavLink to="/login" className='bg-white text-stone-600  border border-stone-200
+              text-xs font-medium px-4 py-2 lg:px-4  text-center rounded-md shadow-xl hover:shadow-2xl 
+              cursor-pointer transition duration-300 ease-in-out mr-4'
+              onClick={() => setIsOpen(false)}>LOGIN
+            </NavLink>
+            <NavLink to="/signup" className='bg-orange-400 hover:bg-orange-600 text-white 
+              font-medium text-xs px-4 py-2 lg:px-4  text-center rounded-md
+              cursor-pointer transition duration-300 ease-in-out'
+              onClick={() => setIsOpen(false)}>SIGN UP
+            </NavLink>
           </div>
         </div>
       )}
