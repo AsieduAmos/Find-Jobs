@@ -153,8 +153,8 @@ const JobDetails = () => {
               <h3 className="text-xl text-orange-600 font-bold mb-4 border-b pb-2">
                 Company Information
               </h3>
-
-              <h4 className="text-lg text-black font-bold mb-2">
+              <h2 className='text-xs font-bold text-gray-400 mb-2'>COMPANY NAME</h2>
+              <h4 className="text-lg text-black font-medium mb-2">
                 {jobDetails?.company?.name || 'Company name not available'}
               </h4>
 
@@ -168,17 +168,6 @@ const JobDetails = () => {
 
                   <p className="mt-1 bg-slate-50 border border-slate-200 text-gray-700 break-all font-semibold rounded p-2 text-sm">
                     {jobDetails?.company?.email || 'Email not available'}
-                  </p>
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <h5 className="text-xs font-bold uppercase tracking-wider text-gray-400">
-                    Contact Phone
-                  </h5>
-
-                  <p className="mt-1 bg-slate-50 border border-slate-200 text-gray-700 font-semibold rounded p-2 text-sm">
-                    {jobDetails?.company?.phone || 'Phone not available'}
                   </p>
                 </div>
 
