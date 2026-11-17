@@ -7,7 +7,6 @@ import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 const SignUp = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
@@ -94,18 +93,6 @@ const SignUp = () => {
             />
           </div>
         </div>
-
-         <div>
-           <label className='block mb-2 text-lg font-medium text-stone-400'>Phone Number*</label>
-           <input onChange={(e) => setPhone(e.target.value)}
-                 className='w-full p-3 bg-white rounded-md shadow-2xl'
-                 type='tel'
-                 name='number'
-                 id='number' 
-                 required
-                 placeholder='Phone Number'
-            />
-          </div>
 
       <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
         <div>
