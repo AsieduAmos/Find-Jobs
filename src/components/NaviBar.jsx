@@ -33,14 +33,12 @@ const NaviBar = () => {
             <NavLink to="/" className={activeStyle}>Home</NavLink>
             <NavLink to="/addjob" className={activeStyle}>Add Job</NavLink>
             <NavLink to="/jobpage" className={activeStyle}>Jobs</NavLink>
-            <div className='ml-70'>
+            <div className='ml-20'>
               <NavLink to="/login" className='bg-white text-stone-600  border border-stone-200
-                text-xs font-medium px-4 py-2 lg:px-4  text-center rounded-md shadow-xl hover:shadow-2xl 
-                cursor-pointer transition duration-300 ease-in-out mr-4'>LOGIN</NavLink>
-
-             <NavLink to="/signup" className='bg-orange-400 hover:bg-orange-600 text-white 
-                font-medium text-xs px-4 py-2 lg:px-4  text-center rounded-md
-                cursor-pointer transition duration-300 ease-in-out'>SIGN UP</NavLink>
+                text-xs font-medium px-4 py-2 lg:px-4 text-center rounded-md shadow-xl hover:shadow-2xl 
+                cursor-pointer transition duration-300 ease-in-out '>
+                  LOGIN
+              </NavLink>
           </div>
        </div>
           
@@ -79,10 +77,7 @@ const NaviBar = () => {
             <NavLink to="/jobpage" className="text-gray-800 ml-4 font-medium" onClick={() => setIsOpen(false)}>Jobs</NavLink>
             <NavLink to="/login" className="text-orange-500 ml-4 font-medium"
               onClick={() => setIsOpen(false)}>Log In
-            </NavLink>
-            <NavLink to="/signup" className="text-orange-500 ml-4 font-medium"
-              onClick={() => setIsOpen(false)}>Sign Up
-            </NavLink>
+            </NavLink>          
           </div>
         </div>
       )}
