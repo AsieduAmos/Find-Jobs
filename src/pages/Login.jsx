@@ -1,8 +1,8 @@
 
 import React, {useState}from 'react'
 import { Link, useNavigate, useLocation} from 'react-router-dom'
-import {auth,} from '../config/firebase'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import {auth, googleProvider} from '../config/firebase'
+import { signInWithEmailAndPassword, signInWithPopup} from 'firebase/auth'
 import AuthNaviBar from '../components/AuthNavBar'
 
 
@@ -22,7 +22,19 @@ const Login = () => {
    //Check if a previous location was explicitly passed in React Router state
    const from = location.state?.from;
 
-
+const continueWithGoogle = async (e) => {
+    e.preventDefault();
+    try {
+      await signInWithPopup(auth, googleProvider);
+      // Navigate to the add job page after successful sign-in
+      navigate('/');
+      // Handle successful sign-in
+    } catch (error) {
+      setError('err.message');
+      // Handle sign-up errors
+      console.error('Error signing up:', error);
+    }
+  };
 
    const handleLogin = async (e) => {
       e.preventDefault();
@@ -55,7 +67,7 @@ const Login = () => {
 <>
    <AuthNaviBar />
  
-    <div className='mx-auto bg-slate-500 rounded-lg shadow-2xl relative mx-6 w-full sm:w-2/5 mt-30 mb-30'>
+    <div className='mx-auto bg-slate-500 rounded-lg shadow-2xl relative mx-6 w-full sm:w-2/5 mt-10 mb-30'>
          <form onSubmit={handleLogin}
          className='space-y-6 px-5 py-12 bg-stone-100 w-full text-stone-700'>
             <p className='text-4xl font-bold text-stone-600 '>Sign In</p>
@@ -116,6 +128,16 @@ const Login = () => {
             </Link> 
          </div>
 
+           </div>
+            <div>
+                <h2 className='ml-60'>OR</h2>
+            <button 
+            className=' text-stone-600 hover:text-red-700 bg-white cursor-pointer ml-30
+               border-white px-12 py-3 mt-6 mb-2 border rounded-md '
+               onClick={continueWithGoogle}>
+              Continue with Google
+           
+            </button>
            </div>
         
         </form> 

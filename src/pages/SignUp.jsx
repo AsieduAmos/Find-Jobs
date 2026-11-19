@@ -40,7 +40,7 @@ const SignUp = () => {
     try {
       await signInWithPopup(auth, googleProvider);
       // Navigate to the add job page after successful sign-in
-      navigate('/addjob');
+      navigate('/');
       // Handle successful sign-in
     } catch (error) {
       setError('err.message');
@@ -136,7 +136,7 @@ const SignUp = () => {
             className=' text-red-600  hover:text-red-700 hover:bg-white cursor-pointer
                border-white px-8 py-3 mt-6 mb-2 '
                onClick={continueWithGoogle}>
-             Continue with Google
+              Continue with Google
            
             </button>
            </div>
