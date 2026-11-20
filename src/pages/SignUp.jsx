@@ -124,17 +124,17 @@ const SignUp = () => {
             <div className=' items-center'>
            <button
                type='submit' className=' text-white bg-blue-400 hover:shadow-xl cursor-pointer
-               border-white px-14 py-3 mt-4 lg:ml-40 ml-30' 
+               border-white px-14 py-3 mt-4 lg:ml-40 ml-20' 
                onClick={handleSignUp}>
                CREATE
            </button>
 
           </div>
-           <h2 className='lg:ml-60 ml-46'>OR</h2>
+           <h2 className='lg:ml-60 ml-36'>OR</h2>
            <div>
             <button 
             className=' text-stone-600  hover:text-red-500 bg-white hover:bg-stone-200 cursor-pointer
-               border-white px-14 py-3 mb-2 rounded-md lg:ml-30 ml-16 border border-white'
+               border-white px-14 py-3 mb-2 rounded-md lg:ml-30 ml-6 border border-white'
                onClick={continueWithGoogle}>
               Continue with Google
            
