@@ -132,8 +132,8 @@ const continueWithGoogle = async (e) => {
             <div>
                 <h2 className='ml-60'>OR</h2>
             <button 
-            className=' text-stone-600 hover:text-red-700 bg-white cursor-pointer ml-30
-               border-white px-12 py-3 mt-6 mb-2 border rounded-md '
+            className=' text-stone-600 hover:text-red-500 bg-white hover:bg-stone-200 cursor-pointer ml-30
+               border-white px-14 py-3 mt-6 mb-2 border rounded-md '
                onClick={continueWithGoogle}>
               Continue with Google
            

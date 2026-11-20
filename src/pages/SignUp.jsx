@@ -56,7 +56,7 @@ const SignUp = () => {
 <>
       <AuthNaviBar />
  
-    <div className='mx-auto bg-slate-500 rounded-lg shadow-2xl relative mx-6 w-full sm:w-2/5 mt-26 mb-30'>
+    <div className='mx-auto bg-slate-500 rounded-lg shadow-2xl relative mx-6 w-full sm:w-2/5 mt-10 mb-30'>
          <form onSubmit={handleSignUp}
           className='space-y-6 px-5 py-12 bg-stone-100 w-full text-stone-700'>
            
@@ -120,28 +120,28 @@ const SignUp = () => {
          </div>
        </div>  
 
-          <div className='grid grid-cols-2 gap-4'>
+          
             <div className=' items-center'>
            <button
                type='submit' className=' text-white bg-blue-400 hover:shadow-xl cursor-pointer
-               border-white px-8 py-3 mt-4 mb-2' 
+               border-white px-14 py-3 mt-4 ml-40' 
                onClick={handleSignUp}>
                CREATE
            </button>
 
           </div>
-
+           <h2 className='ml-60'>OR</h2>
            <div>
             <button 
-            className=' text-red-600  hover:text-red-700 hover:bg-white cursor-pointer
-               border-white px-8 py-3 mt-6 mb-2 '
+            className=' text-stone-600  hover:text-red-500 bg-white hover:bg-stone-200 cursor-pointer
+               border-white px-14 py-3 mb-2 rounded-md ml-30 border border-white'
                onClick={continueWithGoogle}>
               Continue with Google
            
             </button>
            </div>
 
-          </div>
+         
         
         </form> 
         
