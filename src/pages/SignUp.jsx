@@ -130,11 +130,11 @@ const SignUp = () => {
            </button>
 
           </div>
-           <h2 className='lg:ml-60 ml-30'>OR</h2>
+           <h2 className='lg:ml-60 ml-36'>OR</h2>
            <div>
             <button 
             className=' text-stone-600  hover:text-red-500 bg-white hover:bg-stone-200 cursor-pointer
-               border-white px-14 py-3 mb-2 rounded-md lg:ml-30 ml-4 border border-white'
+               border-white px-14 py-3 mb-2 rounded-md lg:ml-30 ml-8 border border-white'
                onClick={continueWithGoogle}>
               Continue with Google
            
