@@ -130,10 +130,10 @@ const continueWithGoogle = async (e) => {
 
            </div>
             <div>
-                <h2 className='lg:ml-60 ml-36'>OR</h2>
+                <h2 className='lg:ml-60 ml-40'>OR</h2>
             <button 
             className=' text-stone-600 hover:text-red-500 bg-white hover:bg-stone-200 cursor-pointer lg:ml-30
-              ml-6 border-white px-14 py-3 mt-6 mb-2 border rounded-md '
+              ml-8 border-white px-14 py-3 mt-6 mb-2 border rounded-md '
                onClick={continueWithGoogle}>
               Continue with Google
            
