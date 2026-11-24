@@ -130,7 +130,7 @@ const SignUp = () => {
            </button>
 
           </div>
-           <h2 className='lg:ml-60 ml-36'>OR</h2>
+           <h2 className='lg:ml-60 ml-40'>OR</h2>
            <div>
             <button 
             className=' text-stone-600  hover:text-red-500 bg-white hover:bg-stone-200 cursor-pointer
