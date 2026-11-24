@@ -124,7 +124,7 @@ const SignUp = () => {
             <div className=' items-center'>
            <button
                type='submit' className=' text-white bg-blue-400 hover:shadow-xl cursor-pointer
-               border-white px-14 py-3 mt-4 lg:ml-40 ml-12' 
+               border-white px-14 py-3 mt-4 lg:ml-40 ml-20' 
                onClick={handleSignUp}>
                CREATE
            </button>
